@@ -1,0 +1,27 @@
+# Write Terraform code for an S3 bucket and attach a policy?
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_s3_bucket" "example_bucket" {
+  bucket = "example-bucket"
+  acl    = "private"
+}
+
+resource "aws_s3_bucket_policy" "example_bucket_policy" {
+  bucket = aws_s3_bucket.example_bucket.id
+
+  policy = <<POLICY
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:GetObject",
+        "Resource": "${aws_s3_bucket.example_bucket.arn}/*"
+      }
+    ]
+  }
+  POLICY
+}
