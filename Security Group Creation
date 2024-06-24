@@ -1,0 +1,16 @@
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_security_group" "example" {
+  name        = "example-security-group"
+  description = "Example security group"
+  vpc_id      = aws_vpc.example.id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
