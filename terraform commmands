@@ -1,0 +1,27 @@
+terraform init - Initializes a working directory containing Terraform configuration files.
+
+terraform plan - Creates an execution plan to show the proposed changes to the infrastructure.
+
+terraform apply - Applies the changes required to reach the desired state of the configuration.
+
+terraform destroy - Destroys the Terraform-managed infrastructure, cleaning up all created resources.
+
+terraform validate - Validates the configuration files in a directory, checking for syntax and internal consistency.
+
+terraform refresh - Reconciles the Terraform state with the real-world infrastructure.
+
+terraform get - Downloads and updates modules mentioned in the root module.
+
+terraform output - Extracts the value of an output variable from the state file.
+
+terraform show - Provides human-readable output from a state or plan file.
+
+terraform state - Used for advanced state management, allowing manual manipulation of Terraform's state files.
+
+terraform import- Imports existing infrastructure into Terraform, allowing you to bring resources under management.
+
+terraform taint - Manually marks a Terraform-managed resource as tainted, forcing it to be destroyed and recreated.
+
+terraform untaint - Manually unmarks a Terraform-managed resource as tainted, restoring it to its non-recreation state.
+
+terraform workspace - Manages workspaces, allowing you to have multiple states for the same configuration.
